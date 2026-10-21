@@ -2,19 +2,20 @@
 
 from __future__ import annotations
 
+from collections.abc import Iterator
 from dataclasses import dataclass
-from typing import Generic, Iterator, TypeVar
+from typing import TypeVar
 
 T = TypeVar("T")
 
 
 @dataclass
-class _Node(Generic[T]):
+class _Node[T]:
     value: T
     next: _Node[T] | None = None
 
 
-class LinkedList(Generic[T]):
+class LinkedList[T]:
     def __init__(self) -> None:
         self._head: _Node[T] | None = None
         self._size = 0

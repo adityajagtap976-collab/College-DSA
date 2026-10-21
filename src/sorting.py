@@ -29,6 +29,15 @@ def insertion_sort(items: MutableSequence[Any]) -> MutableSequence[Any]:
     return items
 
 
+def selection_sort(items: MutableSequence[Any]) -> MutableSequence[Any]:
+    """Sort items in place with selection sort and return the same sequence."""
+    for start in range(len(items) - 1):
+        smallest = min(range(start, len(items)), key=items.__getitem__)
+        if smallest != start:
+            items[start], items[smallest] = items[smallest], items[start]
+    return items
+
+
 def quick_sort(items: list[Any]) -> list[Any]:
     """Return a new list sorted with quicksort."""
     if len(items) <= 1:

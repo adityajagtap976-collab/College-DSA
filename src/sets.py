@@ -5,7 +5,7 @@ from typing import TypeVar
 T = TypeVar("T")
 
 
-def set_operations(first: set[T], second: set[T]) -> dict[str, set[T]]:
+def set_operations[T](first: set[T], second: set[T]) -> dict[str, set[T]]:
     """Return common set operations for two sets."""
     return {
         "union": first | second,

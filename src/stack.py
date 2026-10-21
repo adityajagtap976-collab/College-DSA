@@ -1,11 +1,11 @@
 """A last-in, first-out stack."""
 
-from typing import Generic, TypeVar
+from typing import TypeVar
 
 T = TypeVar("T")
 
 
-class Stack(Generic[T]):
+class Stack[T]:
     """Stack supporting push, pop, peek, and empty checks."""
 
     def __init__(self) -> None:

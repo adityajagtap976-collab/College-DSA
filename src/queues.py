@@ -1,11 +1,11 @@
 """List-backed and circular queues."""
 
-from typing import Generic, TypeVar
+from typing import TypeVar
 
 T = TypeVar("T")
 
 
-class ListQueue(Generic[T]):
+class ListQueue[T]:
     """FIFO queue backed by a list."""
 
     def __init__(self) -> None:
@@ -26,7 +26,7 @@ class ListQueue(Generic[T]):
         return len(self._items)
 
 
-class CircularQueue(Generic[T]):
+class CircularQueue[T]:
     """Fixed-capacity FIFO queue that reuses freed slots."""
 
     def __init__(self, capacity: int) -> None:
